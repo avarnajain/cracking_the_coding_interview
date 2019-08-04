@@ -153,9 +153,48 @@ print(rotate_matrix(test)==result)
 
 print("----------1.8----------")
 def reset_matrix(m):
-    
+    nrows = len(m)
+    ncols = len(m[0])
+    position = []
+    for i in range(nrows):
+        for j in range(ncols):
+            if m[i][j] == 0:
+                position.append((i, j))
+    for item in position:
+        i = item[0]
+        j = item[1]
+        for k in range(len(m[0])):
+            m[i][k] = 0
+        for k in range(len(m)):
+            m[k][j] = 0
+    return m
+test = [
+    [1, 2, 3, 4, 5],
+    [1, 2, 0, 4, 5],
+    [1, 2, 3, 4, 5],
+    [1, 2, 3, 4, 5]
+]
+result = [
+    [1, 2, 0, 4, 5],
+    [0, 0, 0, 0, 0],
+    [1, 2, 0, 4, 5],
+    [1, 2, 0, 4, 5]
+]
+test2 = [
+    [1, 2, 3, 4, 5],
+    [1, 2, 0, 4, 5],
+    [1, 2, 3, 4, 5],
+    [1, 2, 3, 0, 5]
+]
+result2 = [
+    [1, 2, 0, 0, 5],
+    [0, 0, 0, 0, 0],
+    [1, 2, 0, 0, 5],
+    [0, 0, 0, 0, 0]
+]
+print(reset_matrix(test)==result)
+print(reset_matrix(test2)==result2)
 
-
-
-
+print("----------1.9----------")
+def 
 
