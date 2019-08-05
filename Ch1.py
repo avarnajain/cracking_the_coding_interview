@@ -197,11 +197,36 @@ print(reset_matrix(test2)==result2)
 
 print("----------1.9----------")
 def is_substring(s, sub):
-    for i in range(len(s) - 1):
+    for i in range(len(s)):
         if s[i] == sub[0]:
+            found = True
             for j in range(1, len(sub)):
-                if s[i+j] != sub[j]:
-                    return False
-    return True
-print(is_substring("abcdefgh", "def"))
-print(is_substring("abcdabcdefg", "bcdefg"))
+                if j+i >= len(s):
+                    found = False
+                    break
+                if s[j+i] != sub[j]:
+                    found = False
+                    break
+            if found:
+                return True
+    return False
+def is_rotation(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    doubled = s1+s1
+    if is_substring(doubled, s2):
+        return True
+    else:
+        return False
+print(is_substring("aaaa", "aa"))
+print(is_substring("abcdefdefgde", "defg"))
+print(is_substring("abcdefdefg", "defgh"))
+print(is_rotation("waterbottle", "erbottlewat"))
+print(is_rotation("waterbottl", "erbottlewat"))
+print(is_rotation("water", "erwat"))
+
+
+
+
+
+
