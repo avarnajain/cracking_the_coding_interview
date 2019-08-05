@@ -196,5 +196,12 @@ print(reset_matrix(test)==result)
 print(reset_matrix(test2)==result2)
 
 print("----------1.9----------")
-def 
-
+def is_substring(s, sub):
+    for i in range(len(s) - 1):
+        if s[i] == sub[0]:
+            for j in range(1, len(sub)):
+                if s[i+j] != sub[j]:
+                    return False
+    return True
+print(is_substring("abcdefgh", "def"))
+print(is_substring("abcdabcdefg", "bcdefg"))
