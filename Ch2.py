@@ -219,14 +219,14 @@ def iterate_to_k(node, index, i):
         return node
     if i > index or not node:
         return 0
-    iterate_to_k(node.next, index, i+1)
-# ll.append(6)
-# print(kth_to_last_element(ll, 3))
-# print(kth_to_last_element(ll, 1))
-# print(kth_to_last_element(ll, 7))
-# print(kth_to_last_recursive(ll, 3))
-# print(kth_to_last_recursive(ll, 1))
-# print(kth_to_last_recursive(ll, 7))
+    return iterate_to_k(node.next, index, i+1)
+ll.append(6)
+print(kth_to_last_element(ll, 3))
+print(kth_to_last_element(ll, 1))
+print(kth_to_last_element(ll, 7))
+print(kth_to_last_recursive(ll, 3))
+print(kth_to_last_recursive(ll, 1))
+print(kth_to_last_recursive(ll, 7))
 
 print("----------2.3----------")
 def delete_input_node(node):
@@ -300,3 +300,19 @@ def create_num(n_list):
 # l2.append(9)
 # l2.append(2)
 # print(list_sum(l1, l2))
+
+print("----------2.6----------")
+# def palindrome(ll):
+
+
+
+
+
+
+
+
+
+
+
+
+
