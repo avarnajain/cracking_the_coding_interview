@@ -251,23 +251,52 @@ def partition(ll, x):
         else:
             higher.append(current.data)
         current = current.next
+    if not higher.head:
+        return lower
     current = higher.head
     while current:
         lower.append(current.data)
         current = current.next
     return lower
+# ll = LinkedList()
+# ll.append(1)
+# ll.append(5)
+# ll.append(2)
+# ll.append(3)
+# ll.append(4)
+# ll.append(6)
+# print(partition(ll, 3))
+# print(partition(ll, 4))
 
-ll = LinkedList()
-ll.append(1)
-ll.append(5)
-ll.append(2)
-ll.append(3)
-ll.append(4)
-ll.append(6)
-print(partition(ll, 3))
-print(partition(ll, 4))
-
-
-
-
-
+print("----------2.5----------")
+def list_sum(l1, l2):
+    n1 = []
+    n2 = []
+    extract_num(l1, n1)
+    extract_num(l2, n2)
+    n1 = create_num(n1)
+    n2 = create_num(n2)
+    s = str(n1 + n2)
+    l = LinkedList()
+    for i in range(len(s)-1, -1, -1):
+        l.append(int(s[i]))
+    return l
+def extract_num(l, n):
+    current = l.head
+    while current:
+        n.append(current.data)
+        current = current.next
+def create_num(n_list):
+    n = ''
+    for i in range(len(n_list)-1, -1, -1):
+        n += str(n_list[i])
+    return int(n) 
+l1 = LinkedList()
+l1.append(7)
+l1.append(1)
+l1.append(6)
+l2 = LinkedList()
+l2.append(5)
+l2.append(9)
+l2.append(2)
+print(list_sum(l1, l2))
