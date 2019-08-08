@@ -210,23 +210,23 @@ def kth_to_last_recursive(ll, k):
     if not ll.head:
         return 0
     index = ll.length() - k + 1
-    print('index', index)
     kth = iterate_to_k(ll.head, index, i=1)
-    return kth
+    if kth:
+        return kth.data    
+    return 0
 def iterate_to_k(node, index, i):
-    print('node', node, 'index', index, 'i', i)
     if i == index:
         return node
     if i > index or not node:
         return 0
     return iterate_to_k(node.next, index, i+1)
-ll.append(6)
-print(kth_to_last_element(ll, 3))
-print(kth_to_last_element(ll, 1))
-print(kth_to_last_element(ll, 7))
-print(kth_to_last_recursive(ll, 3))
-print(kth_to_last_recursive(ll, 1))
-print(kth_to_last_recursive(ll, 7))
+# ll.append(6)
+# print(kth_to_last_element(ll, 3))
+# print(kth_to_last_element(ll, 1))
+# print(kth_to_last_element(ll, 7))
+# print(kth_to_last_recursive(ll, 3))
+# print(kth_to_last_recursive(ll, 1))
+# print(kth_to_last_recursive(ll, 7))
 
 print("----------2.3----------")
 def delete_input_node(node):
